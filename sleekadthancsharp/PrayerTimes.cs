@@ -81,7 +81,7 @@ namespace sleekadthancsharp
             return times;
         }
 
-        public bool CheckTime(TimeSpan time, AdthanPlayer player)
+        public bool CheckTime(TimeSpan time, AdthanPlayer player, bool play)
         {
             //ensure to pass a player object
             if(curr_times.Count == 0)
@@ -97,7 +97,7 @@ namespace sleekadthancsharp
                     if (t.Seconds == time.Seconds && t.Minutes == time.Minutes && t.Hours == time.Hours)
                     {
                         curr_prayer = timings[c];
-                        if (prayers.Contains(timings[c]))
+                        if (prayers.Contains(timings[c]) && play)
                         {
                             if (timings[c] == "Fajr")
                             {
