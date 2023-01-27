@@ -1,6 +1,5 @@
 # sleekadthancsharp
 Port of my python sleek adthan app
-makes a request to 
 ## Features:
 - more silent than python
 - has inspirational quotes
