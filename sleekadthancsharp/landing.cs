@@ -1,4 +1,6 @@
 using System.Windows.Forms;
+using sleekadthancsharp.Props;
+using static System.Windows.Forms.DataFormats;
 
 
 namespace sleekadthancsharp
@@ -9,10 +11,30 @@ namespace sleekadthancsharp
         DateTime today = new DateTime(2023, 01, 24, 6, 19, 00);
         PrayerTimes PrayerTime;
         AdthanPlayer player = new AdthanPlayer();
-        bool play = true;
+        bool enabled = (bool)settings.Default["enabled"];
+        public enum NotificationSetting
+        {
+            Silent,
+            Notify,
+            Adthan
+        }
+
+        Dictionary<string, NotificationSetting> playvalues = new Dictionary<string, NotificationSetting>()
+        {
+            {"Fajr",  (NotificationSetting)settings.Default["Fajr"]},
+            {"Sunrise", (NotificationSetting)settings.Default["Sunrise"]},
+            {"Duhur", (NotificationSetting)settings.Default["Duhur"]},
+            {"Asr" , (NotificationSetting)settings.Default["Asr"]},
+            {"Magrib" , (NotificationSetting)settings.Default["Magrib"]},
+            {"Isha" , (NotificationSetting)settings.Default["Isha"]},
+
+        };
         public landing()
         {
             InitializeComponent();
+            checkBox1.Checked = enabled;
+            MaximizeBox = false;
+            MinimizeBox = false;
             notifyIcon1.Visible = true;
             notifyIcon1.Text = "Tooltip message here";
             this.ShowInTaskbar = false;
@@ -47,7 +69,7 @@ namespace sleekadthancsharp
         private void timer1_Tick(object sender, EventArgs e)
         {
             
-            if (PrayerTime.CheckTime(today.TimeOfDay, player, play))
+            if (PrayerTime.CheckTime(today.TimeOfDay, player, playvalues, enabled) && playvalues[PrayerTime.curr_prayer] != NotificationSetting.Silent && enabled)
             {
                 notifyIcon1.Visible = true;
                 notifyIcon1.BalloonTipTitle = $"Time for {PrayerTime.curr_prayer}!";
@@ -70,7 +92,7 @@ namespace sleekadthancsharp
         private void adthanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AdthanToggle.Checked = !AdthanToggle.Checked;
-            play = !play;
+            settings.Default["enabled"] = AdthanToggle.Checked;
         }
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,7 +112,18 @@ namespace sleekadthancsharp
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            settings.Default.Save();
             Application.Exit();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

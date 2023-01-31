@@ -33,6 +33,7 @@ namespace sleekadthancsharp
         private List<string> prayers = new List<string>()
         {
            "Fajr",
+           "Sunrise",
            "Dhuhr",
            "Asr",
            "Maghrib",
@@ -81,7 +82,7 @@ namespace sleekadthancsharp
             return times;
         }
 
-        public bool CheckTime(TimeSpan time, AdthanPlayer player, bool play)
+        public bool CheckTime(TimeSpan time, AdthanPlayer player, Dictionary<string, landing.NotificationSetting> play, bool master)
         {
             //ensure to pass a player object
             if(curr_times.Count == 0)
@@ -97,7 +98,7 @@ namespace sleekadthancsharp
                     if (t.Seconds == time.Seconds && t.Minutes == time.Minutes && t.Hours == time.Hours)
                     {
                         curr_prayer = timings[c];
-                        if (prayers.Contains(timings[c]) && play)
+                        if (prayers.Contains(timings[c]) && play[timings[c]] == landing.NotificationSetting.Adthan && master)
                         {
                             if (timings[c] == "Fajr")
                             {

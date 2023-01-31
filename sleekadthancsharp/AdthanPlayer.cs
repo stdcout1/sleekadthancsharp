@@ -75,7 +75,7 @@ namespace sleekadthancsharp
                     phrases.Add(Isha.PickRandom());
                     break;
                 default:
-                    phrases.Add("Blah");
+                    phrases.Add("");
                     break;
             }
             //phrases.Add(basePrayerQuotes.PickRandom());
