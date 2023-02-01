@@ -9,8 +9,8 @@ namespace sleekadthancsharp
 {
     public partial class landing : Form
     {
-        //DateTime today = DateTime.Now;
-        DateTime today = new DateTime(2023, 01, 24, 6, 19, 00);
+        DateTime today = DateTime.Now;
+        //DateTime today = new DateTime(2023, 01, 24, 6, 19, 00);
         PrayerTimes PrayerTime;
         AdthanPlayer player = new AdthanPlayer();
         bool enabled = (bool)settings.Default["enabled"];
