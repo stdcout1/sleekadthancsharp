@@ -10,6 +10,4 @@ Port of my python sleek adthan app
   - Perhaps make it more customizable using a configuration file
 - Allow custom adthan voices and sounds
   - Maybe allow the code to accept .mp3
-- Finish the options menu 
-  - I think then I will make first release
 - Finnaly, inshallah, fix lots of bugs and make a realease version.
