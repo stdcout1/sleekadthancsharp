@@ -37,12 +37,33 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.GUI.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -98,9 +119,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox1.Controls.Add(this.flowLayoutPanel2);
+            this.groupBox1.Controls.Add(this.flowLayoutPanel6);
+            this.groupBox1.Controls.Add(this.flowLayoutPanel5);
+            this.groupBox1.Controls.Add(this.flowLayoutPanel4);
+            this.groupBox1.Controls.Add(this.flowLayoutPanel3);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -111,45 +135,167 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Prayer Notfications";
             // 
-            // checkBox3
+            // flowLayoutPanel1
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox3.Location = new System.Drawing.Point(3, 173);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(8);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Padding = new System.Windows.Forms.Padding(12);
-            this.checkBox3.Size = new System.Drawing.Size(389, 66);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Fajr";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 63);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(377, 54);
+            this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // checkBox2
+            // label1
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox2.Location = new System.Drawing.Point(3, 107);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(8);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Padding = new System.Windows.Forms.Padding(12);
-            this.checkBox2.Size = new System.Drawing.Size(389, 66);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "Fajr";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.label1.Location = new System.Drawing.Point(6, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Fajr";
             // 
-            // checkBox1
+            // comboBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox1.Location = new System.Drawing.Point(3, 41);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(8);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Padding = new System.Windows.Forms.Padding(12);
-            this.checkBox1.Size = new System.Drawing.Size(389, 66);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Fajr";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(123, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(212, 46);
+            this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.SettingsChange);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.label2);
+            this.flowLayoutPanel2.Controls.Add(this.comboBox2);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(12, 123);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(377, 54);
+            this.flowLayoutPanel2.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(6, 6);
+            this.label2.Margin = new System.Windows.Forms.Padding(6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 38);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Sunrise";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(123, 3);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(212, 46);
+            this.comboBox2.TabIndex = 1;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.SettingsChange);
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Controls.Add(this.label6);
+            this.flowLayoutPanel6.Controls.Add(this.comboBox6);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(12, 363);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(377, 54);
+            this.flowLayoutPanel6.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(6, 6);
+            this.label6.Margin = new System.Windows.Forms.Padding(6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 38);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Isha";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(123, 3);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(212, 46);
+            this.comboBox6.TabIndex = 1;
+            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.SettingsChange);
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.label5);
+            this.flowLayoutPanel5.Controls.Add(this.comboBox5);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(12, 303);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(377, 54);
+            this.flowLayoutPanel5.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(6, 6);
+            this.label5.Margin = new System.Windows.Forms.Padding(6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 38);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Magrib";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(123, 3);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(212, 46);
+            this.comboBox5.TabIndex = 1;
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.SettingsChange);
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.label4);
+            this.flowLayoutPanel4.Controls.Add(this.comboBox4);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(12, 243);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(377, 54);
+            this.flowLayoutPanel4.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(6, 6);
+            this.label4.Margin = new System.Windows.Forms.Padding(6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 38);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Asr";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(123, 3);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(212, 46);
+            this.comboBox4.TabIndex = 1;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.SettingsChange);
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.label3);
+            this.flowLayoutPanel3.Controls.Add(this.comboBox3);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(12, 183);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(377, 54);
+            this.flowLayoutPanel3.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(6, 6);
+            this.label3.Margin = new System.Windows.Forms.Padding(6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 38);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Duhur";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(123, 3);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(212, 46);
+            this.comboBox3.TabIndex = 1;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.SettingsChange);
             // 
             // landing
             // 
@@ -166,7 +312,12 @@
             this.Resize += new System.EventHandler(this.minimize);
             this.GUI.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -180,9 +331,24 @@
         private ToolStripMenuItem optionsToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
         private GroupBox groupBox1;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label label1;
+        private ComboBox comboBox1;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Label label2;
+        private ComboBox comboBox2;
+        private FlowLayoutPanel flowLayoutPanel6;
+        private Label label6;
+        private ComboBox comboBox6;
+        private FlowLayoutPanel flowLayoutPanel5;
+        private Label label5;
+        private ComboBox comboBox5;
+        private FlowLayoutPanel flowLayoutPanel4;
+        private Label label4;
+        private ComboBox comboBox4;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private Label label3;
+        private ComboBox comboBox3;
     }
 }

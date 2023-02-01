@@ -101,7 +101,10 @@ namespace sleekadthancsharp
 
         public void StopAdthan()
         {
-            player.Stop();
+            if (player != null)
+            {
+                player.Stop();
+            }
         }
 
     }

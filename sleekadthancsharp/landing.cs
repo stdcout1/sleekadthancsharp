@@ -1,7 +1,9 @@
+using System.DirectoryServices;
 using System.Windows.Forms;
 using sleekadthancsharp.Props;
 using static System.Windows.Forms.DataFormats;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace sleekadthancsharp
 {
@@ -32,12 +34,13 @@ namespace sleekadthancsharp
         public landing()
         {
             InitializeComponent();
-            checkBox1.Checked = enabled;
+            //checkBox1.Checked = enabled;
             MaximizeBox = false;
             MinimizeBox = false;
             notifyIcon1.Visible = true;
             notifyIcon1.Text = "Tooltip message here";
             this.ShowInTaskbar = false;
+            
             this.Hide();
             PrayerTime = new PrayerTimes("Toronto", "Canada", today.Day, today.Month, today.Year); //make a new prayer time object which will hold the request
             timer1.Enabled = true;
@@ -45,7 +48,22 @@ namespace sleekadthancsharp
 
         private void landing_Load(object sender, EventArgs e)
         {
-            
+            int c = 0;
+            // initinalize comboxboxes 
+            List<FlowLayoutPanel> panellist = groupBox1.Controls.OfType<FlowLayoutPanel>().ToList();
+            foreach (FlowLayoutPanel panel in panellist)
+            {
+                c++;
+                var comboboxes = panel.Controls.OfType<ComboBox> ().ToList();
+                var lables = panel.Controls.OfType<Label>().ToList();
+                foreach (ComboBox cb in comboboxes)
+                {
+                    cb.Items.AddRange(Enum.GetNames(typeof(NotificationSetting)));
+                    var labeltext = lables[0].Text;
+                    cb.SelectedIndex = (int) playvalues[labeltext];
+                    cb.Name = lables[0].Text;
+                }
+            }
         }
 
         private void minimize(object sender, EventArgs e)
@@ -112,18 +130,23 @@ namespace sleekadthancsharp
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            foreach (var keyValuePair in playvalues)
+            {
+                settings.Default[keyValuePair.Key] = (int)keyValuePair.Value;
+            }
+
             settings.Default.Save();
             Application.Exit();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void SettingsChange(object sender, EventArgs e)
         {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
+            var dropdown = sender as ComboBox;
+            if (dropdown != null && playvalues.Keys.Contains<string>(dropdown.Name))
+            {
+                playvalues[dropdown.Name] = (NotificationSetting)dropdown.SelectedIndex;
+            }
         }
     }
 }
